@@ -58,13 +58,6 @@ const domainPing = (domain) => {
             domain: domain
         };
 
-        if (!isValidDomain(domain)) {
-            data.success = false;
-            data.error = 'invalid domain name "' + domain + '"';
-            debugErr(data.error);
-            return reject(data);
-        }
-
         getDomainIp(domain)
             .then((ip) => {
                 data.ip = ip;
